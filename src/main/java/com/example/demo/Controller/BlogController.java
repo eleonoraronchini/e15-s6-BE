@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.DTO.AutoreDTO;
 import com.example.demo.DTO.BlogDTO;
 import com.example.demo.Service.Services;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,12 @@ public class BlogController {
             throw new RuntimeException("Non è possibile creare un blog senza titolo.");
         } return services.createBlog(blogDTO);
 
-
+        }
+    @PostMapping("/autore")
+    public AutoreDTO createAutore (@RequestBody AutoreDTO autoreDTO){
+        if(autoreDTO.getNome() == null){
+            throw new RuntimeException("Non è stato possibile creare autore. Inserisci il nome.");
+        } return services.createAutore(autoreDTO);
 
     }
 }

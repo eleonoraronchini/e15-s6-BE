@@ -1,7 +1,10 @@
 package com.example.demo.Service;
 
+import com.example.demo.DTO.AutoreDTO;
 import com.example.demo.DTO.BlogDTO;
+import com.example.demo.Mapper.AutoreMapperDTO;
 import com.example.demo.Mapper.BlogMapperDTO;
+import com.example.demo.Model.Autore;
 import com.example.demo.Model.Blog;
 import com.example.demo.Repository.AutoreRepository;
 import com.example.demo.Repository.BlogRepository;
@@ -19,6 +22,8 @@ public class Services {
     BlogRepository blogRepository;
     @Autowired
     BlogMapperDTO blogMapperDTO;
+    @Autowired
+    AutoreMapperDTO autoreMapperDTO;
 
     @GetMapping
     public Page<BlogDTO> getAllBlog (Pageable pageable){
@@ -28,5 +33,11 @@ public class Services {
       Blog b = blogMapperDTO.toEntity(blogDTO);
       blogRepository.save(b);
       return blogDTO;
+    }
+
+    public AutoreDTO createAutore (AutoreDTO autoreDTO){
+        Autore a = autoreMapperDTO.toEntity(autoreDTO);
+        autoreRepository.save(a);
+        return autoreDTO;
     }
 }

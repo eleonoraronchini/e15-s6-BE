@@ -13,6 +13,7 @@ public class BlogMapperDTO {
         blogDTO.setContenuto(blog.getContenuto());
         blogDTO.setCategoria(blog.getCategoria());
         blogDTO.setTempoDiLettura(blog.getTempoDiLettura());
+        blogDTO.setAutore(blog.getAutore());
      return blogDTO;
     }
 
@@ -22,6 +23,7 @@ public class BlogMapperDTO {
         blog.setContenuto(blogDTO.getContenuto());
         blog.setCategoria(blogDTO.getCategoria());
         blog.setTempoDiLettura(blogDTO.getTempoDiLettura());
+        blog.setAutore(blogDTO.getAutore());
       return blog;
     }
 }

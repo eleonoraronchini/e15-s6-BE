@@ -24,6 +24,7 @@ public class Autore {
     private String email;
     private LocalDate dataDiNascita;
 
+
     public Autore(String nome, String cognome, LocalDate dataDiNascita) {
 
         this.nome = nome;
