@@ -14,6 +14,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Optional;
+
+import static com.example.demo.Mapper.AutoreMapperDTO.toEntity;
+
 @Service
 public class Services {
     @Autowired
@@ -37,7 +41,20 @@ public class Services {
 
     public AutoreDTO createAutore (AutoreDTO autoreDTO){
         Autore a = autoreMapperDTO.toEntity(autoreDTO);
-        autoreRepository.save(a);
-        return autoreDTO;
+       autoreRepository.save(a);
+       return autoreDTO;
+
     }
+
+    public Long nuovoAutore (AutoreDTO nuovoAutoreDTO){
+        Autore autoreInserito = toEntity(nuovoAutoreDTO);
+        return autoreRepository.save(autoreInserito).getId();
+    }
+
+    public Optional<Autore> ricercaAutoreId(Long id){
+        Optional<Autore> autoreRecuperato = autoreRepository.findById(id);
+        return autoreRecuperato;
+    }
+
+
 }

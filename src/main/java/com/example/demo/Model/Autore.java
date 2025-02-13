@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-@Entity
+@Entity (name = "autori")
 @Component
 @Data
 @NoArgsConstructor
@@ -23,12 +23,7 @@ public class Autore {
     private String cognome;
     private String email;
     private LocalDate dataDiNascita;
+    private String avatar;
 
 
-    public Autore(String nome, String cognome, LocalDate dataDiNascita) {
-
-        this.nome = nome;
-        this.cognome = cognome;
-        this.dataDiNascita = dataDiNascita;
-    }
 }

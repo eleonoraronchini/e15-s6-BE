@@ -13,6 +13,7 @@ public class AutoreMapperDTO {
         autoreDTO.setCognome(autore.getCognome());
         autoreDTO.setEmail(autore.getEmail());
         autoreDTO.setDataDiNascita(autore.getDataDiNascita());
+        autoreDTO.setAvatar(autore.getAvatar());
         return autoreDTO;
     }
 
@@ -22,6 +23,7 @@ public class AutoreMapperDTO {
         autore.setCognome(autoreDto.getCognome());
         autore.setEmail(autoreDto.getEmail());
         autore.setDataDiNascita(autoreDto.getDataDiNascita());
+        autore.setAvatar(autoreDto.getAvatar());
         return autore;
     }
 }
